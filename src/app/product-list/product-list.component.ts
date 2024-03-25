@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductDetailComponent],
+  imports: [ProductDetailComponent,CommonModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -13,7 +15,7 @@ export class ProductListComponent {
   welcome = 'Welcome to <strong>LazadaMall</strong>';
   number = 0;
   message = "";
-  selectedProduct = "Webcam";
+  selectedProduct : string | undefined;
 
   incrementClick(){
     this.message="";
