@@ -13,7 +13,7 @@ export class ProductListComponent {
   welcome = 'Welcome to <strong>LazadaMall</strong>';
   number = 0;
   message = "";
-  selectedProduct = "";
+  selectedProduct = "Webcam";
 
   incrementClick(){
     this.message="";
