@@ -23,7 +23,6 @@ export class ProductDetailComponent implements OnInit, OnChanges{
     console.log(`Variable passed is ${this.name} called from constructor`);
   }
 
-
   buyClicked(){
     // Notify parent, pass this.name as parameter
     // this.name = string
