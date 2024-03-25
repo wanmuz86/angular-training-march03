@@ -10,9 +10,12 @@
     <hr/>
     <h2>Our products</h2>
     <ul>
-        <li (click)="selectProduct('Webcam')">Webcam</li>
+        <!-- <li (click)="selectProduct('Webcam')">Webcam</li>
         <li (click)="selectProduct('Microphone')">Microphone</li>
-        <li (click)="selectProduct('Wireless Keyboard')">Wireless Keyboard</li>
+        <li (click)="selectProduct('Wireless Keyboard')">Wireless Keyboard</li> -->
+        <li *ngFor="let product of products; let i = index" (click)="selectProduct(product)">
+            {{i+1}} - {{product}}
+        </li>
     </ul>
     <hr>
     <div *ngIf="selectedProduct; else noProduct">

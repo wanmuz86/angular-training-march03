@@ -17,6 +17,8 @@ export class ProductListComponent {
   message = "";
   selectedProduct : string | undefined;
 
+  products = ["Webcam", "Microphone", "Wireless keyboard"];
+
   incrementClick(){
     this.message="";
     this.number++; // this, refer to the scope within the component
