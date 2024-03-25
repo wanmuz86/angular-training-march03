@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [],
+  imports: [ProductDetailComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -24,12 +24,15 @@ export class ProductListComponent {
     }else {
       this.number--;
     }
-   
   }
   
   reset(){
     this.message="";
     this.number = 0;
+  }
+
+  selectProduct(productName:string){
+    alert(`${productName} has been selected`);
   }
 
 }
