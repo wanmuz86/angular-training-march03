@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })
-export class ProductDetailComponent implements OnInit{
+export class ProductDetailComponent implements OnInit, OnChanges{
   
   // It's going to be a variable passed from the parent component
   @Input() name = '';
@@ -23,6 +23,7 @@ export class ProductDetailComponent implements OnInit{
     console.log(`Variable passed is ${this.name} called from constructor`);
   }
 
+
   buyClicked(){
     // Notify parent, pass this.name as parameter
     // this.name = string
@@ -34,5 +35,13 @@ export class ProductDetailComponent implements OnInit{
   // Instead of constructor
   ngOnInit(): void {
     console.log(`Variable passed here is ${this.name} called from ngOnInit`);
+  }
+
+  // The variable changes store the @Input inside our component
+  ngOnChanges(changes: SimpleChanges): void {
+    const product = changes['name']; // Retrieve the input of value 'name'
+    const oldValue = product.previousValue;
+    const currentValue = product.currentValue;
+    console.log(`Product change from ${oldValue} to ${currentValue}`);
   }
 }
