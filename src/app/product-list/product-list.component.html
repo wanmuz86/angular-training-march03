@@ -17,9 +17,16 @@
     <hr>
     <div>
         <h2>Selected Product</h2>
+        <!-- pass data using input -->
         <!-- name refer to the variable on child -->
         <!-- selectedProduct is the variable from this page passed to child -->
-        <app-product-detail [name]='selectedProduct'></app-product-detail>
+        
+
+         <!-- pass data using Output -->
+         <!-- I will listen to the bought event from child-->
+         <!-- Once it is called, I will run the function onBuy on .ts -->
+        <app-product-detail [name]='selectedProduct' (bought)="onBuy($event)">
+        </app-product-detail>
     </div>
 
 

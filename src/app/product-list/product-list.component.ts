@@ -36,5 +36,8 @@ export class ProductListComponent {
     // Update the selected product clicked by user
     this.selectedProduct = productName;
   }
+  onBuy(productName:string){
+    alert(`${productName} has been selected and I call it from parent`);
+  }
 
 }
