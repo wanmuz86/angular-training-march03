@@ -15,7 +15,7 @@
         <li (click)="selectProduct('Wireless Keyboard')">Wireless Keyboard</li>
     </ul>
     <hr>
-    <div *ngIf="selectedProduct">
+    <div *ngIf="selectedProduct; else noProduct">
         <h2>Selected Product</h2>
         <!-- pass data using input -->
         <!-- name refer to the variable on child -->
@@ -28,6 +28,11 @@
         <app-product-detail [name]='selectedProduct' (bought)="onBuy($event)">
         </app-product-detail>
     </div>
+    <!-- #noProduct refer to the reference / 
+        id of the template that can be refered to in the component -->
+    <ng-template #noProduct>
+        <p class="text-center">No product selected</p>
+    </ng-template>
 
 
 </div>
