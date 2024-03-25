@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent {
+  // It's going to be a variable passed from the parent component
+  @Input() name = '';
 
 }

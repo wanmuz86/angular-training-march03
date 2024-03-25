@@ -13,6 +13,7 @@ export class ProductListComponent {
   welcome = 'Welcome to <strong>LazadaMall</strong>';
   number = 0;
   message = "";
+  selectedProduct = "";
 
   incrementClick(){
     this.message="";
@@ -32,7 +33,8 @@ export class ProductListComponent {
   }
 
   selectProduct(productName:string){
-    alert(`${productName} has been selected`);
+    // Update the selected product clicked by user
+    this.selectedProduct = productName;
   }
 
 }
