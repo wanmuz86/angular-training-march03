@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { CommonModule } from '@angular/common';
+import { SortPipe } from '../pipes/sort.pipe';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductDetailComponent,CommonModule],
+  imports: [ProductDetailComponent,CommonModule,SortPipe],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -16,6 +17,7 @@ export class ProductListComponent {
   number = 0;
   message = "";
   selectedProduct : string | undefined;
+  date = new Date();
 
   products = ["Webcam", "Microphone", "Wireless keyboard"];
 

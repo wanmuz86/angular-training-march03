@@ -2,6 +2,7 @@
     <!-- Property biding with innerHTML -->
     <p [innerHTML]="welcome"></p>
     <p>{{number}}</p>
+    <p>Today is {{date | date:'longDate'}}</p>
     <p class="text-danger">{{message}}</p>
     <button (click)="incrementClick()" class="btn btn-success">Increment</button>
     <button (click)="decrementClick()" class="btn btn-warning">Decrement</button>
@@ -13,8 +14,8 @@
         <!-- <li (click)="selectProduct('Webcam')">Webcam</li>
         <li (click)="selectProduct('Microphone')">Microphone</li>
         <li (click)="selectProduct('Wireless Keyboard')">Wireless Keyboard</li> -->
-        <li *ngFor="let product of products; let i = index" (click)="selectProduct(product)">
-            {{i+1}} - {{product}}
+        <li *ngFor="let product of products | sort; let i=index" (click)="selectProduct(product)">
+            {{product | uppercase}}
         </li>
     </ul>
     <hr>
