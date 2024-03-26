@@ -3,6 +3,9 @@
     <p [innerHTML]="welcome"></p>
     <p>{{number}}</p>
     <p>Today is {{date | date:'longDate'}}</p>
+
+    <input appNumeric/>
+    
     <p class="text-danger">{{message}}</p>
     <button (click)="incrementClick()" class="btn btn-success">Increment</button>
     <button (click)="decrementClick()" class="btn btn-warning">Decrement</button>

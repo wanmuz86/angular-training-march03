@@ -5,4 +5,14 @@
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
    }
+
+   .valid {
+    border: green 5px solid;
+  
+   }
+
+   .invalid {
+    border:red 5px solid;
+  
+   }
  

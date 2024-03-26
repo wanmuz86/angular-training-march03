@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { CommonModule } from '@angular/common';
 import { SortPipe } from '../pipes/sort.pipe';
+import { NumericDirective } from '../directives/numeric.directive';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductDetailComponent,CommonModule,SortPipe],
+  imports: [ProductDetailComponent,CommonModule,SortPipe, NumericDirective],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
